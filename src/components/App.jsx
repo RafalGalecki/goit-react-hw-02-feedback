@@ -37,7 +37,7 @@ export class App extends Component {
     if (good > 0) {
       return positiveFeedbackPercentage + '%';
     } else {
-      return 'No good feedback yet.';
+      return 'There is no good feedback yet.';
     }
   };
 
@@ -66,7 +66,7 @@ export class App extends Component {
               )}
             />
           ) : (
-            <Notification message="There is no feedback" />
+            <Notification message="There is no feedback." />
           )}
         </Section>
       </div>
@@ -75,7 +75,15 @@ export class App extends Component {
 }
 
 App.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
   good: PropTypes.number,
   neutral: PropTypes.number,
   bad: PropTypes.number,
+  total: PropTypes.number,
+  positiveFeedbackPercentage: PropTypes.number,
+  title: PropTypes.string,
+  message: PropTypes.string,
+  onLeaveFeedback: PropTypes.func,
+  countTotal: PropTypes.func,
+  countPositiveFeedbackPercentage: PropTypes.func,
 };
