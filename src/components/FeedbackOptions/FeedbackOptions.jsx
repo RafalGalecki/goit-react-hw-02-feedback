@@ -13,7 +13,7 @@ class FeedbackOptions extends Component {
           <button
             type="button"
             key={option}
-            onClick={() => this.onLeaveFeedback()}
+            onClick={onLeaveFeedback}
           >{option}
         
           </button>
